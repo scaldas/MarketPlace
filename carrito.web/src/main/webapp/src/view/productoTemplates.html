@@ -1,0 +1,13 @@
+<script type="text/template" id="producto">
+    <div class="form-group">
+    <form role="form" id="<%= componentId %>-productoForm">
+    <% if(producto.id) {%>
+    <input type="hidden" name="id" value="<%= producto.id %>"/>
+    <% }%>
+		<div class="form-group" >
+		<label for="name">Name</label>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= producto.get('name') %>"/>	
+		</div>
+    </form>
+    </div>
+</script> 

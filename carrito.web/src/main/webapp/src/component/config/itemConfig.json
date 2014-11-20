@@ -1,0 +1,9 @@
+{
+    "displayName" : "Item",
+    "name" : "item",
+    "templateName" : "item",
+    "url" : "user.html",
+    "server": "localhost:8080",
+    "context": "/carrito.web/webresources/Item",
+    "el" : "#main"
+}

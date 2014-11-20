@@ -1,0 +1,23 @@
+<script type="text/template" id="carrito">
+    <div class="form-group">
+    <form role="form" id="<%= componentId %>-carritoForm">
+    <% if(carrito.id) {%>
+    <input type="hidden" name="id" value="<%= carrito.id %>"/>
+    <% }%>
+		<div class="form-group" >
+		<label for="name">Name</label>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= carrito.get('name') %>"/>	
+		</div>
+		<div class="form-group" >
+ 
+			<label for="clientidId">Client Id</label> 
+            <select class="form-control" id="clientId" name="clientId">
+			<!--Se elimina la opción "None" para que se muestre el usuario autenticado-->
+            <% client.each(function(clientid) { %> 
+              <option value="<%=clientid.get('id')%>" <% if(carrito.get('clientId')==clientid.get('id')) {%>selected<%}%> ><%=clientid.get('name')%></option>
+            <% }); %>                
+            </select>  
+		</div>
+    </form>
+    </div>
+</script> 
