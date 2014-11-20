@@ -34,6 +34,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -48,6 +49,12 @@ public class CarritoService extends _CarritoService {
     @GET
     @Path("clientes/{name}")
     public CarritoPageDTO getCarritoCliente(@PathParam("name") String name) {
-        return carritoLogicService.getCarritoCliente(name, 1, 10);
+        return carritoLogicService.getCarritoCliente(name, null, null);
+    }
+    
+    @PUT
+    @Path("{id}")
+    public void updateCarrito(@PathParam("id") Long id, CarritoDTO carrito){
+	carritoLogicService.updateCarrito(carrito);
     }
 }
